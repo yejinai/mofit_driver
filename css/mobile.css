@@ -1,0 +1,130 @@
+@charset "utf-8";
+.mobilemenu{
+    /* visibility: hidden; */
+    display: none;
+    cursor: pointer;
+}
+@media screen and (max-width:1200px) {
+    footer .flex{
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        flex-direction: row;
+        align-items: center;
+    }
+    footer .flex .btmlogo{
+        /* margin-right: 50px; */
+    }
+    footer .link .site{
+        margin-left: 50px;
+    }
+    footer .flex>div:first-of-type{
+        /* margin-bottom: 30px; */
+    }
+    #Products .allbox>.cbox{
+        position: relative;
+        width: 100%;
+        /* max-width: 500px; */
+        margin-bottom: 10%;
+    }
+    #Products .allbox>.img{
+        /* width: 100%; */
+        width: 75%;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        float: left;
+        /* max-width: 500px; */
+        height: initial;
+    }
+    #Products .allbox>.img .mainimg, #Products .allbox>.img .shadowimg{
+        width: 85%;
+    }
+    #Products .allbox:not(:first-of-type)>.img{
+        display: flex;
+        flex-direction: column;
+        /* align-items: flex-end; */
+        align-items: center;
+    }
+    #Products .allbox:not(:first-of-type){
+        margin-top: 10%;
+    }
+
+    #team .img{
+        position: relative;
+        padding-top: 40%;
+        height: 0;
+    }
+    #team .img img{
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+
+    .f20{
+        font-size: 16px;
+    }
+    .f48{
+        font-size: 40px;
+    }
+}
+@media screen and (max-width:1100px) {
+    .mobilemenu{
+        /* visibility:visible; */
+        display: block;
+    }
+    .menulist>li:not(.mobilemenu){
+        /* visibility: hidden;
+        width: 0;
+        margin: 0; */
+        display: none;
+    }
+    #menu .box .menulist li:not(:first-of-type, .mobilemenu){
+        margin: 0;
+    }
+}
+
+@media screen and (max-width:900px) {
+    #MotifDrive{
+        height: initial;
+    }
+    #MotifDrive .box>.txt{
+        width: 100%;
+        max-width: 500px;
+    }
+    #MotifDrive .box>.img{
+        position: relative;
+        width: 100%;
+        bottom: 0;
+        height: initial;
+    }
+    #MotifDrive .box>.img img{
+        width: 100%;
+    }
+    #team .img{
+        border-radius: 30px;
+    }
+}
+
+@media screen and (max-width:700px) {
+    /* #contact .cbox>div:not(:first-of-type){
+        margin-left: 10%
+    } */
+}
+
+#mMenu{
+    visibility: hidden;
+    position: fixed;
+    transition: background 0.5s ease-out;
+    z-index: 999;
+    line-height: 28px;
+    top: 100px;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0);
+    text-align: right;
+    padding: 0 5vw 20px 5vw;
+    text-shadow: -2px 2px 2px rgba(0, 0, 0, 0.5), 2px 2px 2px rgba(0, 0, 0, 0.5);
+}
+#mMenu.on{
+    visibility: visible;
+}

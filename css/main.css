@@ -1,0 +1,443 @@
+@charset "utf-8";
+@font-face {
+    font-family: 'Pretendard-ExtraBold';
+    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-ExtraBold.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Pretendard-Bold';
+    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Bold.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Pretendard-SemiBold';
+    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-SemiBold.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+body{
+    color: white;
+    font-family: "Noto Sans KR", serif;
+    font-weight: 500;
+}
+.accent{
+    font-family: "Pretendard-ExtraBold", serif;
+}
+.accent2{
+    font-family: "Pretendard-Bold", serif;
+}
+.accent3{
+    font-family: "Pretendard-SemiBold", serif;
+}
+
+#MOTIF{
+    width: 100%;
+    min-height: 100vh;
+    background: #0E0F1E;
+}
+.pos{
+    width: 100%;
+    max-width: 1200px;
+    height: 100%;
+    margin: 0 auto;
+}
+
+.bg{
+    position: absolute;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+}
+.bg img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.f48{
+    font-size: 48px;
+}
+.f32{
+    font-size: 32px;
+}
+.f24{
+    font-size: 24px;
+}
+.f20{
+    font-size: 20px;
+}
+.f12{
+    font-size: 12px;
+}
+
+.w500{
+    font-weight: 500;
+}
+.w600{
+    font-weight: 600;
+}
+.w700{
+    font-weight: 700;
+}
+
+.area{
+    position: relative;
+    width: 100%;
+}
+.area:not(:first-of-type){
+    margin-top: 100px;
+}
+
+.gradient{
+    position: relative;
+    z-index: 2;
+    display: inline-block;
+    background: linear-gradient(90deg, #0081F8, #00E1AE);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.gradient.introtxt{
+    position: relative;
+    z-index: 2;
+    display: inline-block;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.gradient.introtxt::after{
+    z-index: -1;
+    pointer-events: none;
+    position: absolute;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: linear-gradient(90deg, #0081F8, #00E1AE);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.gradient.introtxt::before{
+    z-index: -2;
+    pointer-events: none;
+    position: absolute;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: linear-gradient(90deg, #0081F8, #00E1AE);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#main{
+    width: 100%;
+    height: 100vh;
+}
+#main .box{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+#main .box>.txt{
+    margin-bottom: 103px ;
+    padding: 0 5vw;
+}
+#main .box>.txt .content, #main .box>.txt .gradient::before{
+    text-shadow: -2px 4px 2px rgba(0, 0, 0, 0.5), 2px 4px 2px rgba(0, 0, 0, 0.5);
+}
+
+#MotifDrive{
+    height: 482px;
+}
+
+#MotifDrive .category{
+    padding-top: 32px;
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 70px;
+}
+#MotifDrive .box>.txt{
+    width: 50%;
+    max-width: 530px;
+}
+#MotifDrive .box>.txt .title{
+    margin-bottom: 70px;
+}
+#MotifDrive .box>.txt .content{
+    margin-bottom: 30px;
+}
+#MotifDrive .box>.img{
+    position: absolute;
+    width: 76.25%;
+    height: 257px;
+    bottom: 56px;
+    right: 0;
+}
+
+#Products{
+
+}
+
+#Products>.mainTitle{
+    text-align: center;
+    margin-bottom: 100px;
+}
+#Products>.mainTitle .title{
+    margin-bottom: 30px;
+}
+#Products .category{
+    padding-top: 32px;
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 70px;
+}
+
+#Products .allbox{
+    width: 100%;
+    position: relative;
+    /* display: flex; */
+}
+#Products .allbox:not(:first-of-type){
+    margin-top: 170px;
+}
+
+#Products .allbox>.cbox{
+    position: sticky;
+    top: 20%;
+    width: 32%;
+}
+#Products .allbox>.cbox .title{
+    margin-bottom: 30px;
+}
+#Products .allbox>.cbox .content{
+    margin-bottom: 30px;
+}
+
+#Products .allbox>.img{
+    width: 68%;
+    height: 890px;
+}
+
+#Products .allbox>.img .mainimg{
+    position: relative;
+    z-index: 1;
+    width: 92%;
+    height: 0;
+    padding-top: 55%;
+}
+#Products .allbox>.img .shadowimg{
+    position: relative;
+    top: -9%;
+    z-index: 0;
+    width: 92%;
+    height: 0;
+    padding-top: 55%;
+    transform: rotateX(180deg);
+    opacity: .2;
+}
+#Products .allbox>.img img.pimg{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+#Products .allbox>.img.right img.pimg{
+    transform: perspective(400px) rotateY(-10deg) translateZ(0px);
+}
+#Products .allbox>.img.left img.pimg{
+    transform: perspective(400px) rotateY(10deg) translateZ(0px);
+}
+
+#team{
+
+}
+
+#team .category{
+    padding-top: 32px;
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 70px;
+}
+
+#team .mainTitle{
+    text-align: center;
+    margin-bottom: 60px;
+}
+#team .mainTitle .title{
+    margin-bottom: 30px;
+}
+#team .content{
+    margin-bottom: 88px;
+}
+#team .img{
+    width: 100%;
+    height: 480px;
+    border-radius: 45px;
+    overflow: hidden;
+}
+#team .img>img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#contact{
+    position: relative;
+    width: 100%;
+    /* height: 530px; */
+    background: url(/img/s4_img.jpg) no-repeat center center/cover;
+}
+#contact .areabg{
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 0 5vw;
+}
+
+#contact .mainTitle{
+    padding-top: 125px;
+    text-align: center;
+    margin-bottom: 90px;
+}
+#contact .mainTitle .title{
+    color: #2E58FF;
+    margin-bottom: 30px;
+}
+
+#contact .cbox{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    flex-wrap: wrap;
+    padding-bottom: 86px;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+#contact .cbox>div{
+    margin-bottom: 30px;
+}
+/* #contact .cbox>div:not(:first-of-type){
+    margin-left: calc(min(20%, 225px));
+} */
+#contact .cbox>div .title{
+    margin-bottom: 6px;
+}
+#contact .cbox>div .link{
+    margin-bottom: 27px;
+    text-decoration-line: underline;
+}
+
+footer{
+    width: 100%;
+    height: 265px;
+    background: #0E0F1E;
+    padding: 0 5vw;
+}
+
+footer .box{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    align-content: center;
+}
+
+footer .flex{
+    /* position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%); */
+    /* width: 100%; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: .3s ease-in-out;
+    margin-bottom: 15px;
+}
+footer .flex .btmlogo{
+    margin-right: 80px;
+    margin-bottom: 10px;
+}
+footer .flex ul{
+    margin-right: 50px;
+}
+
+footer .copyright{
+    color: #c9c9c9;
+}
+
+footer .link .info{
+    color: #C9C9C9;
+}
+
+footer .link{
+    display: flex;
+    align-items: center;
+}
+footer .link .site{
+    display: flex;
+    margin-left: 30px;
+}
+footer .link .site img{
+    height: 35px;
+}
+footer .link .site img:not(:first-of-type){
+    margin-left: 40px;
+}
+
+
+.effect {
+    opacity: 0;
+    transform: translateY(100px); /* 위에서 아래로 나오도록 설정 */
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+.effect.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.subeffect {
+    opacity: 0;
+    transform: translateX(300px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+.subeffect.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+#Products .allbox>.img.right.subeffect2 img.pimg{
+    opacity: 0;
+    transform: perspective(400px) rotateY(0) translateZ(0px) translateX(75px);
+    transition: opacity 0.5s ease-out, transform 1s ease;
+}
+#Products .allbox>.img.right.subeffect2.visible img.pimg {
+    opacity: 1;
+    transform: perspective(400px) rotateY(-10deg) translateZ(0px) translateX(0px);
+}
+
+#Products .allbox>.img.left.subeffect2 img.pimg{
+    opacity: 0;
+    transform: perspective(400px) rotateY(0) translateZ(0px) translateX(-75px);
+    transition: opacity 0.5s ease-out, transform 1s ease;
+}
+#Products .allbox>.img.left.subeffect2.visible img.pimg {
+    opacity: 1;
+    transform: perspective(400px) rotateY(10deg) translateZ(0px) translateX(calc(4vw - 20px));
+}
+
+section#MotifDrive{
+    overflow-x: hidden;
+}
+section:not(#main,#contact){
+    padding: 0 5vw;
+}
