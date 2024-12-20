@@ -41,7 +41,78 @@ $(function(){
             }
         });
     });
-}
+
+    var showmenu1 = false;
+    var showmenu2 = false;
+    var showmenu3 = false;
+    var showmenu4 = false;
+
+    $('#MotifDrive').each(function() {
+        var elementTop = $(this).offset().top;
+        var elementBottom = elementTop + $(this).outerHeight();
+
+        if (elementTop < (scrollTop + windowHeight * 0.5) && elementBottom > scrollTop) {
+          showmenu1 = true; // test가 보이면 활성화 플래그 설정
+        }
+    });
+    $('#Products').each(function() {
+        var elementTop = $(this).offset().top;
+        var elementBottom = elementTop + $(this).outerHeight();
+
+        if (elementTop < (scrollTop + windowHeight * 0.5) && elementBottom > scrollTop) {
+          showmenu2 = true; // test가 보이면 활성화 플래그 설정
+        }
+    });
+    $('#team').each(function() {
+        var elementTop = $(this).offset().top;
+        var elementBottom = elementTop + $(this).outerHeight();
+
+        if (elementTop < (scrollTop + windowHeight * 0.5) && elementBottom > scrollTop) {
+          showmenu3 = true; // test가 보이면 활성화 플래그 설정
+        }
+    });
+    $('#contact').each(function() {
+        var elementTop = $(this).offset().top;
+        var elementBottom = elementTop + $(this).outerHeight();
+
+        if (elementTop < (scrollTop + windowHeight * 0.5) && elementBottom > scrollTop) {
+          showmenu4 = true; // test가 보이면 활성화 플래그 설정
+        }
+    });
+
+    if (showmenu1) {
+        $('.s1').addClass('visible');
+        $('.s2').removeClass('visible');
+        $('.s3').removeClass('visible');
+        $('.s4').removeClass('visible');
+    } else {
+        $('.s1').removeClass('visible');
+    }
+    if (showmenu2) {
+        $('.s2').addClass('visible');
+        $('.s1').removeClass('visible');
+        $('.s3').removeClass('visible');
+        $('.s4').removeClass('visible');
+    } else {
+        $('.s2').removeClass('visible');
+    }
+    if (showmenu3) {
+        $('.s3').addClass('visible');
+        $('.s1').removeClass('visible');
+        $('.s2').removeClass('visible');
+        $('.s4').removeClass('visible');
+    } else {
+        $('.s3').removeClass('visible');
+    }
+    if (showmenu4) {
+        $('.s4').addClass('visible');
+        $('.s1').removeClass('visible');
+        $('.s2').removeClass('visible');
+        $('.s3').removeClass('visible');
+    } else {
+        $('.s4').removeClass('visible');
+    }
+  }
 
   // 페이지가 로드되면 바로 실행
   checkVisibility();

@@ -28,3 +28,12 @@
 #menu .mainlogo{
     max-width: 60%;
 }
+
+#menu .pc{
+    color: white;
+}
+#menu .pc.visible{
+    background: linear-gradient(90deg, #0081F8, #00E1AE);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
