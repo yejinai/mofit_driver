@@ -390,6 +390,10 @@ footer .link .site{
 }
 footer .link .site img{
     height: 35px;
+    cursor: pointer;
+}
+footer .link .site img:hover{
+    opacity: 0.6;
 }
 footer .link .site img:not(:first-of-type){
     margin-left: 40px;
