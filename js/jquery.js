@@ -22,39 +22,26 @@ $(function(){
     var windowHeight = $(window).height();
     var scrollTop = $(window).scrollTop();
 
-    // effect 클래스에 대해 visible 추가
-    $('.effect').each(function() {
-        var elementTop = $(this).offset().top;
-        var elementBottom = elementTop + $(this).outerHeight();
-        
-        // 화면에 70% 정도 보일 때
-        if (elementTop < (scrollTop + windowHeight * 0.7) && elementBottom > scrollTop) {
-            $(this).addClass('visible');
-        }
-    });
+    // 적용할 클래스 배열
+    var classes = ['.effect', '.subeffect', '.subeffect2'];
+    var visibilityThresholds = [0.7, 0.7, 0.5];
 
-    // subeffect 클래스에 대해 visible 추가
-    $('.subeffect').each(function() {
-        var elementTop = $(this).offset().top;
-        var elementBottom = elementTop + $(this).outerHeight();
-        
-        // 화면에 70% 정도 보일 때
-        if (elementTop < (scrollTop + windowHeight * 0.7) && elementBottom > scrollTop) {
-            $(this).addClass('visible');
-        }
-    });
+    // 각 클래스에 대해 처리
+    classes.forEach(function(selector, index) {
+        var threshold = visibilityThresholds[index];
 
-    // subeffect2 클래스에 대해 visible 추가
-    $('.subeffect2').each(function() {
-        var elementTop = $(this).offset().top;
-        var elementBottom = elementTop + $(this).outerHeight();
-        
-        // 화면에 70% 정도 보일 때
-        if (elementTop < (scrollTop + windowHeight * 0.55) && elementBottom > scrollTop) {
-            $(this).addClass('visible');
-        }
+        $(selector).each(function() {
+            var elementTop = $(this).offset().top;
+            var elementBottom = elementTop + $(this).outerHeight();
+
+            if (elementTop < (scrollTop + windowHeight * threshold) && elementBottom > scrollTop) {
+                $(this).addClass('visible');
+            } else {
+                $(this).removeClass('visible');
+            }
+        });
     });
-  }
+}
 
   // 페이지가 로드되면 바로 실행
   checkVisibility();
@@ -81,8 +68,14 @@ $(function(){
     var target = $($(this).attr('href')); // 이동할 대상
     if (target.length) { // 같은 페이지 내의 요소인지 확인
       event.preventDefault(); // 기본 동작 방지
+  
+      // transform 영향을 제거한 위치 계산
+      var targetOffset = target.offset().top;
+      var translateY = parseFloat(target.css('transform').split(',')[5]) || 0; // transform의 translateY 값 가져오기
+  
+      // 정확한 위치로 스크롤
       $('html, body').animate({
-        scrollTop: target.offset().top - 150 // 100px 위로 조정
+        scrollTop: targetOffset - translateY - 150 // 원래 위치 - translateY - 150px
       }, 500); // 0.5초 동안 스크롤
     }
   });
