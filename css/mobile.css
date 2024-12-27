@@ -109,6 +109,12 @@
     /* #contact .cbox>div:not(:first-of-type){
         margin-left: 10%
     } */
+
+
+    .pos .box .info{font-size : 13px;}
+
+    footer .link{width : 100%; justify-content: space-between;}
+    footer .link .site img{height : 20px;}
 }
 
 #mMenu{

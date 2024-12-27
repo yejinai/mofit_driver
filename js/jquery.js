@@ -166,3 +166,13 @@ $('.mobilemenu').on('click', function() {
   }
 });
 })
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const video = document.getElementById('intro-video');
+
+    // 비디오 에러 발생 시에만 error 클래스 추가
+    video.addEventListener('error', function() {
+        video.classList.add('error');
+    });
+});
